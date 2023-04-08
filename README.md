@@ -15,7 +15,7 @@ pip install langchain-llm-api
 To use this langchain implementation with the LLM-API:
 
 ```
-from langchain-llm-api import LLMAPI, APIEmbeddings
+from langchain_llm_api import LLMAPI, APIEmbeddings
 
 llm = LLMAPI(
     params={"temp": 0.2},
@@ -29,7 +29,7 @@ llm("What is the capital of France?")
 Or with streaming:
 
 ```
-from langchain-llm-api import LLMAPI, APIEmbeddings
+from langchain_llm_api import LLMAPI, APIEmbeddings
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
 llm = LLMAPI(
