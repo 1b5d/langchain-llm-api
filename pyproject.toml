@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "langchain-llm-api"
+version = "0.0.1"
+description = "Wrappers around LLM API models and embeddings clients."
+authors = ["1b5d <8110504+1b5d@users.noreply.github.com>"]
+homepage = "https://github.com/1b5d/langchain-llm-api"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/1b5d/langchain-llm-api"
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+requests = "^2.28"
+langchain = "^0.0"
+sseclient-py = "^1.7"
+pydantic = "^1.10"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.20"
+black = "^23.3"
+scriv = "^1.2"
+
+[tool.black]
+line-length = 80
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.scriv]
+format = "md"
+
+[tool.pylint]
+init-hook = 'from pylint.config import find_default_config_files; import os, sys; sys.path.append(os.path.dirname(next(find_default_config_files())))'
+disable = ["C0103", "R0913", "R0903", "R0902"]
+
+[build-system]
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
