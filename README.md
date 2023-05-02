@@ -18,6 +18,7 @@ To use this langchain implementation with the LLM-API:
 from langchain_llm_api import LLMAPI, APIEmbeddings
 
 llm = LLMAPI(
+    host_name="http://localhost:8000",
     params={"temp": 0.2},
     verbose=True
 )
@@ -33,6 +34,7 @@ from langchain_llm_api import LLMAPI, APIEmbeddings
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
 llm = LLMAPI(
+    host_name="http://localhost:8000",
     params={"temp": 0.2},
     verbose=True,
     streaming=True,
@@ -51,7 +53,7 @@ to use the embeddings endpoint:
 
 ```
 emb = APIEmbeddings(
-    host_name="your api host name",
+    host_name="your api host name e.g. http://localhost:8000 or wherever your LLM API is hosted",
     params = {"n_predict": 300, "temp": 0.2, ...}
 )
 ```
